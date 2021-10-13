@@ -1,0 +1,10 @@
+{
+    "username": "",
+    "password": "",
+    "browser": "chrome",
+    "url": "https://www.wikipedia.org/",
+    "playwrightInputs" : {
+        "headless": false,
+        "slowMo": 200
+    }
+}
