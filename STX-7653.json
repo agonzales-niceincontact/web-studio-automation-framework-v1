@@ -1,0 +1,68 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "default;an-option-to-start-cxone-studio-should-be-displayed-on-the-cxone-application-menu",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "An option to start CXone Studio should be displayed on the CXone Application Menu",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "a user is logged into CXone",
+            "match": {
+              "location": "test\\steps\\cxone-integration.steps.ts:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "the user opens the CXone Application Menu",
+            "match": {
+              "location": "test\\steps\\cxone-integration.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "the option to start CXone Studio is displayed on the Application Menu",
+            "match": {
+              "location": "test\\steps\\cxone-integration.steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@STX-7650",
+            "line": 9
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "default",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Default",
+    "tags": [],
+    "uri": "test\\features\\cxone-integration.feature"
+  }
+]
