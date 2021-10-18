@@ -3,7 +3,7 @@ import { BrowserType, chromium, Page, Browser, firefox } from 'playwright';
 import { IConfig } from '../interfaces/IConfig';
 import { IDriverManager } from './IDriverManager';
 
-let config: IConfig = require('../playwright.config.json');
+let config: IConfig = require('../../playwright.config.json');
 
 export class DriverManager implements IDriverManager{
 
@@ -65,8 +65,8 @@ export class DriverManager implements IDriverManager{
 
     async Close(): Promise<void> {
         // (await this.getPage()).close();
-        (await this._browserDriver).close(); 
-        this._isBrowserClosed = true;                               
+        await (await this._browserDriver).close(); 
+        this._isBrowserClosed = true;                              
     }
 
     async getPage(): Promise<Page> {        

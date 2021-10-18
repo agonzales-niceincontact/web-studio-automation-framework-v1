@@ -1,4 +1,4 @@
-@login @logout @WebStudio
+@UILogin @WebStudio
 Feature: Login 2
 
 

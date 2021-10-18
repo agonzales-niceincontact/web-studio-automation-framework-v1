@@ -2,7 +2,7 @@ import { BaseElement } from "../elements/baseelement";
 import { ElementFactory } from "../elements/elementfactory";
 import { ElementType } from "../enums/elementType";
 import { UIElementStructure } from "../interfaces/ui-element-structure";
-import { HomeView } from "./homeview";
+import { HomeView } from "./HomeView";
 import { IView } from "./IView";
 import { WelcomeView } from "./WelcomeView";
 
@@ -43,9 +43,6 @@ export class ElementManager {
         //Get Element Object
         //Obtain the property
         const element = this.getElementData(view, elementName);
-        // console.log("***************************");
-        // console.log(element);
-        // console.log("***************************");
         
         return ElementFactory.getElementTypeObject(element);
     }
