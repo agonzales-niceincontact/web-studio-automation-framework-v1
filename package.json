@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js"
+    "test": "cucumber-js",
+    "coverage": "nyc yarn test"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,7 @@
     "cucumber": "^7.0.0-rc.0",
     "cucumber-pretty": "^6.0.0",
     "cucumber-tsflow": "^4.0.0-preview.7",
+    "nyc": "^15.1.0",
     "playwright": "^1.15.0",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
