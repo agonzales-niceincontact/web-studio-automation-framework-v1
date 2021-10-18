@@ -1,4 +1,4 @@
-@login @logout @IC15
+@UILogin @IC15
 Feature: Login into Web Studio
 
 Scenario: Login

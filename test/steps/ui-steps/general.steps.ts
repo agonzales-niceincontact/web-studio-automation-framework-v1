@@ -1,34 +1,7 @@
 import { GetElement } from "./base.steps";
 
 const assert = require('assert');
-const { Given, When, Then } = require('@cucumber/cucumber');
-
-
-let today: string = '';
-let actualAnswer: string = '';
-
-
-function isItFriday(today: string): string {
-    if (today === "Friday") {
-        return "TGIF";
-    } else {
-        return "Nope";
-    }
-}
-
-Given('today is {string}', function (givenDay: string) {
-    
-    today = givenDay;
-});
-
-When('I ask whether it\'s Friday yet', function () {
-    actualAnswer = isItFriday(today);
-});
-
-Then('I should be told {string}', function (expectedAnswer: string) {
-    assert.strictEqual(actualAnswer, expectedAnswer);
-});
-
+import { Given, When, Then } from '@cucumber/cucumber';
 
 Given('I login in to Web Studio', async function () {
     console.log("*********** I LOGIN");
