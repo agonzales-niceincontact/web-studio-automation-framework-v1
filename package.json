@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js",
+    "test": "cucumber-js --tags @TAG --format json:execution-results.json --format html:execution-results.html",
     "coverage": "nyc yarn test"
   },
   "keywords": [],
