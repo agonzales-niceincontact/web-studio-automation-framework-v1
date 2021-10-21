@@ -5,9 +5,9 @@ import { MouseActions } from "./mouseActions";
 import { expect } from '@playwright/test';
 
 export class Table extends BaseElement {   
-    private cellElementByName = "//div[contains(text(), '{CELL_NAME}')]";   
-    private cellElementByType = "//div[contains(text(), '{CELL_NAME}')]/preceding::div[1]/*/*/span[@id='mediatype-{CELL_TYPE}']";
-
+    private cellElementByName = "//div[text() = '{CELL_NAME}']";   
+    private cellElementByType = "//div[text() = '{CELL_NAME}']/preceding::div[1]/*/*/span[@id='mediatype-{CELL_TYPE}']";
+    
     constructor(name: string, locator: string) {        
         super(name, locator, ElementType.Table);        
     }

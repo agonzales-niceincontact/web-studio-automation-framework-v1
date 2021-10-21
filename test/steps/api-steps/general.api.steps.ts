@@ -33,6 +33,6 @@ Then(/I validate the response status code is "([\d]{3})"/, async function (statu
 
 Then(/I should see the following data from API response into "([\w]+)" field/, async function (apiField: string, dataTable) {
     const params = dataTable.rows();
-    const actualResponse = await UtilsHandler.isApiFieldExists(response, params, apiField);        
+    const actualResponse = await UtilsHandler.ValidateApiFieldContentinResponse(response, params, apiField);        
     await assert.strictEqual(actualResponse, true);
   });
