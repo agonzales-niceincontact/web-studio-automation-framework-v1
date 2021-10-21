@@ -3,6 +3,7 @@ import { IConfig } from "../../core/interfaces/IConfig";
 
 let config: IConfig = require('../../playwright.config.json');
 axios.defaults.baseURL = `https://${config.base_api_url}`;
+axios.defaults.headers.common['Authorization'] = "basic aW50ZXJuYWxAaW5Db250YWN0IEluYy46UVVFNVFrTkdSRE0zUWpFME5FUkRSamczUlVORFJVTkRRakU0TlRrek5UYz0=";
 
 export class RequestManager {
 
@@ -14,9 +15,12 @@ export class RequestManager {
         axios.defaults.headers.common['Authorization'] = defaultToken; 
     }
 
-    static async Get(url_input: string): Promise<AxiosResponse>{
+    static async Get(url_input: string, parameters = {}): Promise<AxiosResponse>{
         const apiResponse = await axios.get(
-            `${url_input}`);
+            `${url_input}`, 
+            {
+                params: parameters
+            });
 
         console.log(apiResponse.status);
 
