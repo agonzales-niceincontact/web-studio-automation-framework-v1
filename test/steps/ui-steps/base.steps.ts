@@ -3,6 +3,10 @@ import { ElementManager } from "../../../core/pages/ElementManager";
 
 import { After, Before } from '@cucumber/cucumber';
 
+var {setDefaultTimeout} = require('@cucumber/cucumber');
+
+setDefaultTimeout(60 * 1000);
+
 let driver: DriverManager;
 
 Before({tags: '@UILogin'}, async function () {

@@ -9,7 +9,7 @@ export class DriverManager implements IDriverManager{
 
     private _browser: BrowserType;
     private _browserDriver!: Promise<Browser>;
-    private _page!: Promise<Page>;
+    private _page: Promise<Page> | Page;
     static instance: DriverManager;
     private _isBrowserClosed: boolean = false;
     
@@ -25,8 +25,9 @@ export class DriverManager implements IDriverManager{
 
     }    
 
-    private async initPage(browser: Promise<Browser>): Promise<Page> {    
-        return await (await browser).newPage();;
+    private async initPage(browser: Promise<Browser>): Promise<Page> {
+        const context = (await browser).newContext();  
+        return (await context).newPage();
     }
 
     private async initBrowser(browser: BrowserType): Promise<Browser> {       
@@ -58,9 +59,9 @@ export class DriverManager implements IDriverManager{
             this._browserDriver = this.initBrowser(this._browser);         
             this._page = this.initPage(this._browserDriver);
             this._isBrowserClosed = false;
-        }
-
-        (await this.getPage()).goto(config.url);               
+        }        
+        (await this.getPage()).goto(config.url); 
+        // (await this.getPage()).setViewportSize({ width: 1920, height: 1080 });       
     }
 
     async Close(): Promise<void> {
@@ -75,6 +76,24 @@ export class DriverManager implements IDriverManager{
 
     async getBrowserVar() {
         return await this._browserDriver;
+    }
+
+    async waitForElement(element: string) {
+        // await (await this.getPage()).waitForTimeout(5000);
+        await (await this.getPage()).waitForSelector(element, {state:"visible"});
+    }
+
+    async switchWindow() {
+       //Switch to window
+        const [page1] = await Promise.all([
+            await (await this.getPage()).waitForEvent('popup'),
+          ]);
+        await page1.waitForLoadState();
+        this._page = page1;
+
+        const currentUrl = (await this.getPage()).url();
+        console.log("**************************** Switch to: " + currentUrl + "**************************** ");
+
     }
 
     static getInstance(): DriverManager {

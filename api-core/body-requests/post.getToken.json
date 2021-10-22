@@ -3,6 +3,5 @@
     "username": "{{username}}",
     "password": "{{password}}",
     "isMockEvolve": false,
-    "scope": "RealTimeApi ChatApi CustomApi AdminApi AgentApi ReportingApi",
-    "Authorization": "basic aW50ZXJuYWxAaW5Db250YWN0IEluYy46UVVFNVFrTkdSRE0zUWpFME5FUkRSamczUlVORFJVTkRRakU0TlRrek5UYz0="
+    "scope": "RealTimeApi ChatApi CustomApi AdminApi AgentApi ReportingApi"
   }
