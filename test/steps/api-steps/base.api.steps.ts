@@ -1,6 +1,6 @@
-import { EnvironmentConfig } from "../../../api-core/config/EnvironmentConfig";
-
 import { After, Before } from '@cucumber/cucumber';
+import { EnvironmentConfig } from '../../../src/api-core/config/environment-config';
+import 'module-alias/register';
 
 const apiClient = new EnvironmentConfig();
 

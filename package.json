@@ -10,6 +10,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "_moduleAliases": {
+    "@api-requests": "api-core",
+    "@uielement": "ui-core"
+  },
   "devDependencies": {
     "@cucumber/cucumber": "^7.3.1",
     "@playwright/test": "^1.15.0",
@@ -26,6 +30,7 @@
   },
   "dependencies": {
     "axios": "^0.23.0",
+    "module-alias": "^2.2.2",
     "reflect-metadata": "^0.1.13"
   }
 }
