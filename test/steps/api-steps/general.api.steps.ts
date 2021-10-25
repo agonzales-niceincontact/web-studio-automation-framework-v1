@@ -1,9 +1,8 @@
 import { Given, When, Then } from '@cucumber/cucumber';
-import { expect } from '@playwright/test';
-const assert = require('assert');
+import { RequestManager } from '../../../src/api-core/core/request-manager';
+import { UtilsHandler } from '../../../src/api-core/utils/utils.handler';
+import assert from 'assert';
 
-import { RequestManager } from "../../../api-core/core/RequestManager";
-import { UtilsHandler } from '../../../api-core/utils/utils.handler';
 
 
 let response: any;
@@ -33,6 +32,6 @@ Then(/I validate the response status code is "([\d]{3})"/, async function (statu
 
 Then(/I should see the following data from API response into "([\w]+)" field/, async function (apiField: string, dataTable) {
     const params = dataTable.rows();
-    const actualResponse = await UtilsHandler.ValidateApiFieldContentinResponse(response, params, apiField);        
+    const actualResponse = await UtilsHandler.validateApiFieldContentInResponse(response, params, apiField);        
     await assert.strictEqual(actualResponse, true);
   });

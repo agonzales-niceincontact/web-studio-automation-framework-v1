@@ -2,7 +2,7 @@
     "username": "",
     "password": "",
     "browser": "chrome",
-    "base_api_url":"api-do92.dev.nice-incontact.com",
+    "baseApiUrl":"api-do92.dev.nice-incontact.com",
     "url": "https://na1.dev.nice-incontact.com/admin/#/userManagement",    
     "playwrightInputs" : {
         "headless": false,
